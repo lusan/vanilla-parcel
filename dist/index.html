@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8">
+<link rel="stylesheet" href="/src.a2b27638.css"></head>
+
+<body>
+	<div id="app"></div>
+	<div>
+		<!-- Todo app -->
+	</div>
+	<div>
+		<input class="todo-input" type="text">
+		<button id="todo-add">Add</button>
+		<ul id="todo-list">
+			Add new item
+		</ul>
+	</div>
+
+	<div>
+		<div id="lamb" style="width: 100px; height: 100px" ondrop="drop(event)" ondragover="allowDrop(event)">Lamb</div>
+		<div id="sheep" draggable="true" ondragstart="drag(event)">Sheep</div>
+	</div>
+	<script src="/src.a2b27638.js">
+	</script>
+	<script>function drag(e) {
+  console.log(e.target.id);
+  e.dataTransfer.setData('text', e.target.id);
+}
+
+function allowDrop(e) {
+  e.preventDefault();
+}
+
+function drop(e) {
+  e.preventDefault();
+  var data = e.dataTransfer.getData('text');
+  var node = document.getElementById(data);
+  e.target.appendChild(node);
+}</script>
+</body>
+
+</html>
